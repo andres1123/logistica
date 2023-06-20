@@ -1,0 +1,39 @@
+package com.logistica.service.impl;
+
+import java.util.List;
+
+import com.logistica.model.Cliente;
+import com.logistica.repository.IClienteRepository;
+import com.logistica.service.IClienteService;
+
+public class ClienteServiceImpl implements IClienteService{
+	IClienteRepository repo;
+	@Override
+	public List<Cliente> Listar() {
+		return repo.findAll() ;
+	}
+
+	@Override
+	public Cliente crear(Cliente cliente) {
+
+		return repo.save(cliente);
+	}
+
+	@Override
+	public Cliente actualizar(Cliente cliente) {
+
+		return repo.save(cliente);
+	}
+
+	@Override
+	public void eliminar(Integer codigo) {
+		repo.deleteById(codigo);
+		
+	}
+
+	@Override
+	public Cliente listarPorId(Integer codigo) {
+		return repo.findById(codigo).orElse(null);
+	}
+
+}

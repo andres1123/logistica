@@ -1,0 +1,36 @@
+package com.logistica.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TBL_ENTREGA")
+public class Entrega {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer IdEntrega;
+	@Column()
+	private Integer cantidadProducto ;
+	@Column()
+	private String fechaRegistro;/*AAAA-MM-DD*/
+	@Column()
+	private String fechaEntrega; 
+	@Column()
+	private String numeroGuia; 
+	@Column(name="placa" , length=6,nullable = true )
+	private String placa;
+	@Column(name="puerto" , length=7,nullable = true )
+	private String puerto ;
+	@Column()
+	private String  tipoProducto;
+	@Column()
+	private Double precioTotal;
+	@ManyToOne
+	@JoinColumn(name="idCliente")
+	private Cliente idCliente ;
+}

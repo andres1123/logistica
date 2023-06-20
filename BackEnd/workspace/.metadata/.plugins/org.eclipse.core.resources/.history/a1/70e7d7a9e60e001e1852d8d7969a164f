@@ -1,0 +1,25 @@
+package com.logistica.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="tbl_cliente")
+public class Cliente {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer idCliente;
+	@Column(name="numeroIdentificacionCliente" ,length=30)
+	private String numeroIdentificacionCliente;
+	@Column(name="tipoIdentificacionCliente" ,length=30)
+	private String tipoIdentificacionCliente;
+	@Column(name="nombreCliente" ,length=30)
+	private String nombreCliente ;
+	@Column(name="tipoProducto" ,length=100)
+	private String tipoProducto;
+	@Column(name="direccion" ,length=100)
+	private String direccion;
+}

@@ -1,0 +1,18 @@
+package com.logistica.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.logistica.model.MedioAlmacenamiento;
+import com.logistica.service.IMedioAlmacenamientoService;
+
+@RestController
+public class MedioAlmacenamientoController {
+	@Autowired
+	IMedioAlmacenamientoService service;
+	public List<MedioAlmacenamiento> listar(){
+		return service.Listar();
+	}
+}

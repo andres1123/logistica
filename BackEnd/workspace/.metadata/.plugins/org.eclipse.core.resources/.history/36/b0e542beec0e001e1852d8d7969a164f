@@ -1,0 +1,10 @@
+package com.logistica.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.logistica.service.IClienteService;
+
+public class ClienteController {
+	@Autowired
+	private IClienteService service;
+}

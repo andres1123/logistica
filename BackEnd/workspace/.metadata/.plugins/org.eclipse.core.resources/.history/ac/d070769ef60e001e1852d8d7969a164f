@@ -1,0 +1,34 @@
+package com.logistica.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import com.logistica.model.Cliente;
+import com.logistica.model.MedioAlmacenamiento;
+import com.logistica.service.IClienteService;
+import java.util.*;
+
+@RestController
+public class ClienteController {
+	@Autowired
+	private IClienteService service;
+	
+	@GetMapping
+	/*public List<Cliente> listar(){
+		return service.Listar();
+	}*/
+	public ResponseEntity<List<Cliente>> listar(){
+		List<Cliente> obj = service.Listar();
+		return new ResponseEntity<List<Cliente>>(obj,HttpStatus.OK);
+	}
+	@PostMapping
+	public ResponseEntity<Cliente> crear(Cliente cliente){
+		Cliente obj = service.crear(cliente);
+		return new ResponseEntity<Cliente>(obj,HttpStatus.OK);
+	}
+}

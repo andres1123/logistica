@@ -1,0 +1,12 @@
+package com.logistica.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.logistica.service.IClienteService;
+import java.util.*;
+public class ClienteController {
+	@Autowired
+	private IClienteService service;
+	
+	public List<Cliente> listar()
+}
